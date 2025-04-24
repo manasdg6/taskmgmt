@@ -14,6 +14,11 @@ if (!fs.existsSync(tasksFile)) {
     fs.writeFileSync(tasksFile, '');
 }
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).send('healthy');
+});
+
 // Get all tasks
 app.get('/tasks', (req, res) => {
     try {
