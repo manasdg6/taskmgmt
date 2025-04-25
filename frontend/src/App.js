@@ -12,7 +12,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:5002/tasks');
+      const response = await axios.get('https://backend-app-z4cb.onrender.com/tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -24,7 +24,7 @@ function App() {
     if (!newTask.trim()) return;
 
     try {
-      await axios.post('http://localhost:5002/tasks', { task: newTask });
+      await axios.post('https://backend-app-z4cb.onrender.com/tasks', { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
